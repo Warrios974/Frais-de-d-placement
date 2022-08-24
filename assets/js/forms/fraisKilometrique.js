@@ -33,8 +33,11 @@ formFraisKilometrique.addEventListener("submit", function(e) {
     let nombreChevaux = e.target.nombreChevaux.value;
     let nombreDeplacement = e.target.nombreDeplacement.value;
 
+    addGlobalInfo(datedujour,nom,prenom,adresseDemandeur,codePostale,distanceDomicileLieuTravail,nombreDeplacement);
+
     cardDeplacement = document.querySelectorAll(".cardDplacement");
-    if(cardDeplacement){
+    console.log(cardDeplacement.length);
+    if(cardDeplacement.length != 0){
         for(let i = 1; i <= nombreDeplacement; i++){
             // Récupération des valeur des champs pour chaque nouveaux deplacements
             let dateDeplacement = document.getElementsByName(`dateDeplacement${i}`);
@@ -53,8 +56,10 @@ formFraisKilometrique.addEventListener("submit", function(e) {
             distancesIndenisee.push(deplacement.distanceIndemnisee(distanceDomicileLieuTravail));
             distances.push(Number(distanceDeplacement[0].value));
             distancesDomicileLieuTravail.push(Number(deplacement.distanceDomicileTravailCheck(distanceDomicileLieuTravail)));
-        }
 
+            addDeplacement(dateDeplacement[0].value,objetDeplacement[0].value,adresseDepartDeplacement[0].value,adresseArriverDeplacement[0].value,distanceDeplacement[0].value);
+        }
+        
         //Somme des tableau avec la fonction "additionTableau"
         totalIndenisee = additionTableau(indenisee).toFixed(2);
         totalDistanceParcouruIndenisee =  additionTableau(distancesIndenisee).toFixed(2);
@@ -62,6 +67,9 @@ formFraisKilometrique.addEventListener("submit", function(e) {
         totaldistancesDomicileLieuTravail =  additionTableau(distancesDomicileLieuTravail).toFixed(2);
 
         // Function pour afficher la validation
-        validate(totalDistanceParcouru,totaldistancesDomicileLieuTravail,totalDistanceParcouruIndenisee,totalIndenisee);
+        addBilan(totalDistanceParcouru,totaldistancesDomicileLieuTravail,totalDistanceParcouruIndenisee,totalIndenisee);
+        
+        return true;
     }
+    return false;
 })
