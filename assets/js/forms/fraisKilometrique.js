@@ -8,14 +8,22 @@ btnAjoutDeplacement.addEventListener("click", function(e) {
 
 
 
-//Post traitement
+//Traitement du formulaire
 formFraisKilometrique.addEventListener("submit", function(e) {
     e.preventDefault();
+
+    //Initialisation des variables utile
     let indenisee = [];
     let distances = [];
     let distancesIndenisee = [];
     let distancesDomicileLieuTravail = [];
 
+    let totalIndenisee = 0;
+    let totalDistanceParcouruIndenisee = 0;
+    let totalDistanceParcouru = 0;
+    let totaldistancesDomicileLieuTravail = 0;
+
+    //Récupération des valeur des champs de la section "gobale Info"
     let datedujour = e.target.datedujour.value;
     let nom = e.target.nom.value;
     let prenom = e.target.prenom.value;
@@ -28,6 +36,7 @@ formFraisKilometrique.addEventListener("submit", function(e) {
     cardDeplacement = document.querySelectorAll(".cardDplacement");
     if(cardDeplacement){
         for(let i = 1; i <= nombreDeplacement; i++){
+            // Récupération des valeur des champs pour chaque nouveaux deplacements
             let dateDeplacement = document.getElementsByName(`dateDeplacement${i}`);
             let objetDeplacement = document.getElementsByName(`objetDeplacement${i}`);
             let adresseDepartDeplacement = document.getElementsByName(`adresseDepartDeplacement${i}`);
@@ -35,27 +44,24 @@ formFraisKilometrique.addEventListener("submit", function(e) {
             let distanceDeplacement = document.getElementsByName(`distanceDeplacement${i}`);
             let depuisDomicile = document.getElementsByName(`deplacementDepuisDomicile${i}`);
 
+            //Crée un nouvelle objet "Deplacement" a chaque fois, en fonction des valeurs recupérer
             let deplacement = new Deplacement(depuisDomicile[0].checked,dateDeplacement[0].value,objetDeplacement[0].value,adresseDepartDeplacement[0].value,adresseArriverDeplacement[0].value,distanceDeplacement[0].value);
 
+            //Ajout les valeur des calcule de chaque déplacements à leurs tableau repective
+            //Pour le calculer la somme final
             indenisee.push(deplacement.montantIndemnisee(nombreChevaux,distanceDomicileLieuTravail));
             distancesIndenisee.push(deplacement.distanceIndemnisee(distanceDomicileLieuTravail));
             distances.push(Number(distanceDeplacement[0].value));
             distancesDomicileLieuTravail.push(Number(deplacement.distanceDomicileTravailCheck(distanceDomicileLieuTravail)));
         }
-        let totalIndenisee = 0;
-        let totalDistanceParcouruIndenisee = 0;
-        let totalDistanceParcouru = 0;
-        let totaldistancesDomicileLieuTravail = 0;
 
-        for (let i = 0; i < indenisee.length; i++) {
-            totalIndenisee += indenisee[i];
-            totalDistanceParcouruIndenisee += distancesIndenisee[i];
-            totalDistanceParcouru += distances[i];
-            totaldistancesDomicileLieuTravail += distancesDomicileLieuTravail[i];
-        }
+        //Somme des tableau avec la fonction "additionTableau"
+        totalIndenisee = additionTableau(indenisee).toFixed(2);
+        totalDistanceParcouruIndenisee =  additionTableau(distancesIndenisee);
+        totalDistanceParcouru =  additionTableau(distances);
+        totaldistancesDomicileLieuTravail =  additionTableau(distancesDomicileLieuTravail);
 
-        totalIndenisee = totalIndenisee.toFixed(2);
-
+        // Function pour afficher la validation
         validate(totalDistanceParcouru,totaldistancesDomicileLieuTravail,totalDistanceParcouruIndenisee,totalIndenisee);
     }
 })

@@ -6,4 +6,3 @@ const divDeplacement = document.getElementById("deplacement");
 let numero = -1;
 let btnCloseDeplacement = document.querySelectorAll(".deplacementClose");
 let cardDeplacement;
-
