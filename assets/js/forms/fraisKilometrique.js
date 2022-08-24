@@ -57,9 +57,9 @@ formFraisKilometrique.addEventListener("submit", function(e) {
 
         //Somme des tableau avec la fonction "additionTableau"
         totalIndenisee = additionTableau(indenisee).toFixed(2);
-        totalDistanceParcouruIndenisee =  additionTableau(distancesIndenisee);
-        totalDistanceParcouru =  additionTableau(distances);
-        totaldistancesDomicileLieuTravail =  additionTableau(distancesDomicileLieuTravail);
+        totalDistanceParcouruIndenisee =  additionTableau(distancesIndenisee).toFixed(2);
+        totalDistanceParcouru =  additionTableau(distances).toFixed(2);
+        totaldistancesDomicileLieuTravail =  additionTableau(distancesDomicileLieuTravail).toFixed(2);
 
         // Function pour afficher la validation
         validate(totalDistanceParcouru,totaldistancesDomicileLieuTravail,totalDistanceParcouruIndenisee,totalIndenisee);
