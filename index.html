@@ -19,37 +19,37 @@
                         <div class="formFraisKilometrique__GlobalInfo">
                             <div class="form__champs">
                                 <label for="dateDujour">Date du jour</label>
-                                <input type="datetime-local" name="datedujour" id="dateDuJour">
+                                <input type="datetime-local" name="datedujour" id="dateDuJour" required>
                             </div>
     
                             <div class="form__champs">
                                 <label for="nom">Nom</label>
-                                <input type="text" name="nom" id="nom">
+                                <input type="text" name="nom" id="nom" required>
                             </div>
     
                             <div class="form__champs">
                                 <label for="prenom">Prenom</label>
-                                <input type="text" name="prenom" id="prenom">
+                                <input type="text" name="prenom" id="prenom" required>
                             </div>
     
                             <div class="form__champs">
                                 <label for="adresseDemandeur">Votre adresse</label>
-                                <input type="text" name="adresseDemandeur" id="adresseDemandeur">  
+                                <input type="text" name="adresseDemandeur" id="adresseDemandeur" required>  
                             </div>
     
                             <div class="form__champs">
                                 <label for="codePostale">Code postale</label>
-                                <input type="number" name="codePostale" id="codePostale">  
+                                <input type="number" name="codePostale" id="codePostale" required>  
                             </div>
     
                             <div class="form__champs">
                                 <label for="distanceDomicileLieuTravail">Distance entre votre domicile et lieu de travail aller/retour (km)</label>
-                                <input type="number" step="0.01" name="distanceDomicileLieuTravail" id="distanceDomicileLieuTravail">  
+                                <input type="number" step="0.01" name="distanceDomicileLieuTravail" id="distanceDomicileLieuTravail" required>  
                             </div>
     
                             <div class="form__champs">
                                 <label for="nombreChevaux">Nombre de chevaux de votre véhicule</label>
-                                <select id="nombreChevaux" name="nombreChevaux">
+                                <select id="nombreChevaux" name="nombreChevaux" required>
                                     <option value="0.502" selected>3 CV et moins</option>
                                     <option value="0.575">4 CV</option>
                                     <option value="0.603">5 CV</option>
@@ -59,8 +59,8 @@
                             </div>
     
                             <div class="form__champs">
-                                <label for="nombreDeplacement">Nombre de déplacement depuis votre lieu de travail</label>
-                                <input type="number" name="nombreDeplacement" id="nombreDeplacement">
+                                <label for="nombreDeplacement">Nombre de déplacement</label>
+                                <input type="number" name="nombreDeplacement" id="nombreDeplacement" required>
                             </div>
                         </div>
                         <a id="ajoutDeplacement" class="form__btn formFraisKilometrique__btnAddDeplacement">+ Ajouter un déplacement</a>

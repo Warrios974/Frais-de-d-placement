@@ -21,23 +21,23 @@ function ajoutDeplacement(){
                         </div>
                         <div class="form__champs cardDplacement__champ">
                             <label for="dateDeplacement${numero+1}">Date</label>
-                            <input type="datetime-local" name="dateDeplacement${numero+1}" id="dateDeplacement${numero+1}">
+                            <input type="datetime-local" name="dateDeplacement${numero+1}" id="dateDeplacement${numero+1}" required>
                         </div>
                         <div class="form__champs cardDplacement__champ">
                             <label for="objetDeplacement${numero+1}">Objet du déplacement</label>
-                            <input type="text" name="objetDeplacement${numero+1}" id="objetDeplacement${numero+1}"> 
+                            <input type="text" name="objetDeplacement${numero+1}" id="objetDeplacement${numero+1}" required> 
                         </div>
                         <div class="form__champs cardDplacement__champ">
                             <label for="adresseDepartDeplacement1">Adresse de départ</label>
-                            <input type="text" name="adresseDepartDeplacement${numero+1}" id="adresseDepartDeplacement${numero+1}"> 
+                            <input type="text" name="adresseDepartDeplacement${numero+1}" id="adresseDepartDeplacement${numero+1}" required> 
                         </div>
                         <div class="form__champs cardDplacement__champ">
                             <label for="adresseArriverDeplacement${numero+1}">Adresse d'arriver</label>
-                            <input type="text" name="adresseArriverDeplacement${numero+1}" id="adresseArriverDeplacement${numero+1}"> 
+                            <input type="text" name="adresseArriverDeplacement${numero+1}" id="adresseArriverDeplacement${numero+1}" required> 
                         </div>
                         <div class="form__champs cardDplacement__champ">
                             <label for="distanceDeplacement${numero+1}">Distance parcouru (km)</label>
-                            <input type="number" step="0.01" name="distanceDeplacement${numero+1}" id="distanceDeplacement${numero+1}">
+                            <input type="number" step="0.01" name="distanceDeplacement${numero+1}" id="distanceDeplacement${numero+1}" required>
                         </div>
                         <a class="deplacementClose form__btn cardDplacement__btnCloseCard" onclick="delete_deplacement(this)">X</a>`
 }
