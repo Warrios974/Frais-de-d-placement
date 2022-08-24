@@ -1,0 +1,21 @@
+.cardDplacement{
+    position: relative;
+    background-color: lighten($color: map-get($map: $colors, $key: color-white), $amount: 25);
+    box-sizing: border-box;
+    border-radius: 1rem;
+    width: 21%;
+    padding: 2%;
+    margin: 1% 2%;
+    &__champ{
+        width: 100%;
+        > input{
+            background-color: map-get($map: $colors, $key: color-primary);
+        }
+    }
+    &__btnCloseCard{
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/prefixed/style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <header>
+                
+            </header>
+            <main>
+                <section id="sectionFormFraisKilometrique">
+                    <h1>Frais kilometrique</h1>
+                    <form action="index.html" method="post" class="form formFraisKilometrique"  id="formFraisKilometrique">
+                        <div class="formFraisKilometrique__GlobalInfo">
+                            <div class="form__champs">
+                                <label for="dateDujour">Date du jour</label>
+                                <input type="datetime-local" name="datedujour" id="dateDuJour">
+                            </div>
+    
+                            <div class="form__champs">
+                                <label for="nom">Nom</label>
+                                <input type="text" name="nom" id="nom">
+                            </div>
+    
+                            <div class="form__champs">
+                                <label for="prenom">Prenom</label>
+                                <input type="text" name="prenom" id="prenom">
+                            </div>
+    
+                            <div class="form__champs">
+                                <label for="adresseDemandeur">Votre adresse</label>
+                                <input type="text" name="adresseDemandeur" id="adresseDemandeur">  
+                            </div>
+    
+                            <div class="form__champs">
+                                <label for="codePostale">Code postale</label>
+                                <input type="number" name="codePostale" id="codePostale">  
+                            </div>
+    
+                            <div class="form__champs">
+                                <label for="distanceDomicileLieuTravail">Distance entre votre domicile et lieu de travail aller/retour (km)</label>
+                                <input type="number" step="0.01" name="distanceDomicileLieuTravail" id="distanceDomicileLieuTravail">  
+                            </div>
+    
+                            <div class="form__champs">
+                                <label for="nombreChevaux">Nombre de chevaux de votre véhicule</label>
+                                <select id="nombreChevaux" name="nombreChevaux">
+                                    <option value="0.502" selected>3 CV et moins</option>
+                                    <option value="0.575">4 CV</option>
+                                    <option value="0.603">5 CV</option>
+                                    <option value="0.631">6 CV</option>
+                                    <option value="0.661">7 CV et plus</option>
+                                </select>
+                            </div>
+    
+                            <div class="form__champs">
+                                <label for="nombreDeplacement">Nombre de déplacement depuis votre lieu de travail</label>
+                                <input type="number" name="nombreDeplacement" id="nombreDeplacement">
+                            </div>
+                        </div>
+                        <a id="ajoutDeplacement" class="form__btn formFraisKilometrique__btnAddDeplacement">+ Ajouter un déplacement</a>
+                        <div id="deplacement" class="formFraisKilometrique__deplacements">
+                        </div>
+                        <button type="submit" id="" class="form__btn formFraisKilometrique__btnSubmit">Valider</button>
+                    </form>
+                </section>
+            </main>
+            <footer>
+                <span>Webcup ! Frais de déplacement</span>
+            </footer>
+        </main>
+    </body>
+    <script src="./assets/js/const.js"></script>
+    <script src="./assets/js/class.js"></script>
+    <script src="./assets/js/funct.js"></script>
+    <script src="./assets/js/dashbord.js"></script>
+    <script src="./assets/js/forms/fraisKilometrique.js"></script>
+</html>

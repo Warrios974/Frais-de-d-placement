@@ -1,0 +1,25 @@
+.formFraisKilometrique{
+    &__GlobalInfo{
+        @include flex(row,wrap,center);
+        justify-content: left;
+        width: 100%;
+        padding: 1rem 0;
+    }
+    &__deplacements{
+        @include flex(row,wrap,left);
+        justify-content: left;
+        width: 100%;
+    }
+    &__btnAddDeplacement{
+        z-index: 2;
+        text-decoration: none;
+        position: fixed;
+        bottom: 2rem;
+        left: 2rem;
+    }
+    &__btnSubmit{
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+    }
+}

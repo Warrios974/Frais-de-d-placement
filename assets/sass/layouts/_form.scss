@@ -1,0 +1,28 @@
+.form{
+    position: relative;
+    @include flex(row,wrap,center);
+    justify-content: center;
+    &__champs{
+        @include flex(column,wrap,left);
+        box-sizing: border-box;
+        width: 33%;
+        padding: 1%;
+    }
+    &__btn{
+        background-color: lighten($color: map-get($map: $colors, $key: color-black), $amount: 50);
+        color: map-get($map: $colors, $key: color-white);
+        border: none;
+        border-radius: 1rem;
+        padding: 1rem;
+    }
+    label{
+        padding: 1rem 0;
+    }
+    input{
+        background-color: lighten($color: map-get($map: $colors, $key: color-primary), $amount: 20);
+        border-radius: 1rem;
+        height: 3rem;
+        border: 0;
+        outline: none;
+    }
+}

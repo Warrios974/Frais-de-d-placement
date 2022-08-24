@@ -1,0 +1,6 @@
+body{
+    margin: 0;
+    padding: map-get($map: $padding, $key: body);
+    font-family: $font_familly_global;
+    background-color: map-get($map: $colors, $key: color-primary);
+}

@@ -1,0 +1,26 @@
+<h2> Déplacement n°${numero+1}</h2>
+<div class="form__champs cardDplacement__champ">
+    <input type="checkbox" name="deplacementDepuisDomicile${numero+1}" id="deplacementDepuisDomicile${numero+1}">
+    <label for="deplacementDepuisDomicile${numero+1}">Déplacement depuis votre domicile</label>
+</div>
+<div class="form__champs cardDplacement__champ">
+    <label for="dateDeplacement${numero+1}">Date</label>
+    <input type="datetime-local" name="Date de deplacement ${numero+1}" id="dateDeplacement${numero+1}">
+</div>
+<div class="form__champs cardDplacement__champ">
+    <label for="objetDeplacement${numero+1}">Objet du déplacement</label>
+    <input type="text" name="Objet deplacement ${numero+1}" id="objetDeplacement${numero+1}"> 
+</div>
+<div class="form__champs cardDplacement__champ">
+    <label for="adresseDepartDeplacement1">Adresse de départ</label>
+    <input type="text" name="Adresse depart ${numero+1}" id="adresseDepartDeplacement${numero+1}"> 
+</div>
+<div class="form__champs cardDplacement__champ">
+    <label for="adresseArriverDeplacement${numero+1}">Adresse d'arriver</label>
+    <input type="text" name="Adresse arriver ${numero+1}" id="adresseArriverDeplacement${numero+1}"> 
+</div>
+<div class="form__champs cardDplacement__champ">
+    <label for="distanceDeplacement${numero+1}">Distance parcouru (km)</label>
+    <input type="number" name="Distance parcouru ${numero+1}" id="distanceDeplacement${numero+1}">
+</div>
+<a class="deplacementClose form__btn cardDplacement__btnCloseCard" onclick="delete_deplacement(this)">X</a>

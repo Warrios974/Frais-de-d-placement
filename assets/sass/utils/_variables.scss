@@ -1,0 +1,33 @@
+$nombre_choise: 3;
+$nombre_letter : 8;
+$time_animation : 600ms;
+
+$border_radius:(
+    choises : 1rem,
+    button : 2rem,
+);
+
+$font_familly_global: 'Roboto', sans-serif; 
+
+$colors :(
+    color-primary: #B7C7EE,
+    color-secondary: #FF79DA,
+    color-tertiary: #99E2D0,
+    color-white: #fff,
+    color-black: #000,
+);
+
+
+$font_size :(
+    logo: 2em,
+    icons: 1.5em,
+    headers: 1.4em,
+    paragraphes: 1.1em,
+    legends: 0.8em,
+);
+
+$padding:(
+    body: 0 2rem 0 2rem,
+    card-description: 1rem,
+    class: .3rem,
+);

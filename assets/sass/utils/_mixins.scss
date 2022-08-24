@@ -1,0 +1,17 @@
+@mixin flex($type,$wrap,$align) {
+    display: flex;
+    flex-direction: $type;
+    flex-wrap: $wrap;
+    align-items: $align;
+}
+
+@mixin class {
+    background-color: map-get($map: $colors, $key: color-primary);
+    color: map-get($map: $colors, $key: color-white);
+    border-radius: .5rem;
+    padding: map-get($map: $padding, $key: class);
+}
+
+@mixin box-shadow {
+    box-shadow: 1px 6px 17px 5px rgba(0,0,0,0.41);
+}
