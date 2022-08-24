@@ -9,11 +9,11 @@ Fonctionnement final :
 Avancé : 
 - Creation du formualaire
 - Récuperation des données du formulaire
-- Affichage des calculs finaux
+- Affichage du document en entier
 
 Etat actuel :
-- Affiche le resultat des calculs
+- Affiche le document avec tout les informations
 
 A faire :
-- Mise en forme du document avec les valeurs du formulaire
 - Fonction imprimer
+- Validation des champs
