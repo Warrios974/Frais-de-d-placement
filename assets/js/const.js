@@ -1,5 +1,5 @@
 const formFraisKilometrique = document.getElementById("formFraisKilometrique");
-
+const validateForm = document.getElementById("validationformulaire");
 const btnAjoutDeplacement = document.getElementById("ajoutDeplacement"); 
 const divDeplacement = document.getElementById("deplacement");
 

@@ -60,3 +60,22 @@ function btnCloseDeplacementDisplayBlock() {
         btnCloseDeplacement[numero].style.display = "block"; 
     }
 }
+
+function validate(totalDistanceParcouru,totaldistancesDomicileLieuTravail,totalDistanceParcouruIndenisee,totalIndenisee) {
+    validateForm.classList.add(`validationformulaire`);
+    document.querySelector(".validationformulaire__main_body")
+        .innerHTML = `  <p>
+                            Total distance parcourue aller/retour (km) : <strong>${totalDistanceParcouru}</strong> km
+                        </p>
+                        <p>
+                            Total distance entre domicile et lieu de travail aller/retour (km) :  <strong>${totaldistancesDomicileLieuTravail}</strong> km
+                        </p>
+                        <p>
+                            Distance indemnisée (km) : <strong>${totalDistanceParcouruIndenisee}</strong> km
+                        </p>
+                        <p>
+                            Vous serez indénisée de : <strong>${totalIndenisee}</strong> km
+                        </p>
+    `;
+    validateForm.style.display = "flex";
+}
