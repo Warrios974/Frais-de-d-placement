@@ -45,7 +45,6 @@ function ajoutDeplacement(){
 
 function initBtnCloseDeplacement() {
     btnCloseDeplacement = document.querySelectorAll(".deplacementClose");
-    console.log(btnCloseDeplacement);
 } 
 
 function btnCloseDeplacementDisplayNone() {

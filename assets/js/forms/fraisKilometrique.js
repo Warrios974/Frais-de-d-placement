@@ -26,7 +26,6 @@ formFraisKilometrique.addEventListener("submit", function(e) {
     let nombreDeplacement = e.target.nombreDeplacement.value;
 
     cardDeplacement = document.querySelectorAll(".cardDplacement");
-    console.log(cardDeplacement.length)
     if(cardDeplacement){
         for(let i = 1; i <= nombreDeplacement; i++){
             let dateDeplacement = document.getElementsByName(`dateDeplacement${i}`);
@@ -36,23 +35,12 @@ formFraisKilometrique.addEventListener("submit", function(e) {
             let distanceDeplacement = document.getElementsByName(`distanceDeplacement${i}`);
             let depuisDomicile = document.getElementsByName(`deplacementDepuisDomicile${i}`);
 
-            console.log(depuisDomicile);
-            console.log(`Depuis votre domicile ${i}:` , depuisDomicile[0].checked);
-
             let deplacement = new Deplacement(depuisDomicile[0].checked,dateDeplacement[0].value,objetDeplacement[0].value,adresseDepartDeplacement[0].value,adresseArriverDeplacement[0].value,distanceDeplacement[0].value);
-
-            console.log(`Distance indemisée déplacement ${i} :`, deplacement.distanceIndemnisee(distanceDomicileLieuTravail,));
-            console.log(`Montant indemisée déplacement ${i} :`, deplacement.montantIndemnisee(nombreChevaux,distanceDomicileLieuTravail) , `€`);
 
             indenisee.push(deplacement.montantIndemnisee(nombreChevaux,distanceDomicileLieuTravail));
             distancesIndenisee.push(deplacement.distanceIndemnisee(distanceDomicileLieuTravail));
             distances.push(Number(distanceDeplacement[0].value));
             distancesDomicileLieuTravail.push(Number(deplacement.distanceDomicileTravailCheck(distanceDomicileLieuTravail)));
-
-            console.log(distances);
-            console.log(distancesDomicileLieuTravail);
-            console.log(distancesIndenisee);
-            console.log(indenisee);
         }
         let totalIndenisee = 0;
         let totalDistanceParcouruIndenisee = 0;
@@ -65,10 +53,9 @@ formFraisKilometrique.addEventListener("submit", function(e) {
             totalDistanceParcouru += distances[i];
             totaldistancesDomicileLieuTravail += distancesDomicileLieuTravail[i];
         }
+
         totalIndenisee = totalIndenisee.toFixed(2);
-        console.log(`Total distance parcourue aller/retour (km) : ` + totalDistanceParcouru + `km`);
-        console.log(`Total distance entre domicile et lieu de travail aller/retour (km) : ` + totaldistancesDomicileLieuTravail + `km`);
-        console.log(`Distance indemnisée (km) : ` + totalDistanceParcouruIndenisee + `km`);
-        console.log(`Vous serez indénisée de : ` + totalIndenisee + `€`);
+
+        validate(totalDistanceParcouru,totaldistancesDomicileLieuTravail,totalDistanceParcouruIndenisee,totalIndenisee);
     }
 })
