@@ -60,6 +60,14 @@ function btnCloseDeplacementDisplayBlock() {
     }
 }
 
+function additionTableau(tableau) {
+    let somme = 0;
+    for (let i = 0; i < tableau.length; i++) {
+        somme += tableau[i];
+    }
+    return somme;
+}
+
 function validate(totalDistanceParcouru,totaldistancesDomicileLieuTravail,totalDistanceParcouruIndenisee,totalIndenisee) {
     validateForm.classList.add(`validationformulaire`);
     document.querySelector(".validationformulaire__main_body")
@@ -73,7 +81,7 @@ function validate(totalDistanceParcouru,totaldistancesDomicileLieuTravail,totalD
                             Distance indemnisée (km) : <strong>${totalDistanceParcouruIndenisee}</strong> km
                         </p>
                         <p>
-                            Vous serez indénisée de : <strong>${totalIndenisee}</strong> km
+                            Vous serez indénisée de : <strong>${totalIndenisee}</strong> €
                         </p>
     `;
     validateForm.style.display = "flex";
