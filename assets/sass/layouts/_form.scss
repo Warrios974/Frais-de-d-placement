@@ -19,7 +19,7 @@
         padding: 1rem 0;
     }
     input{
-        background-color: lighten($color: map-get($map: $colors, $key: color-primary), $amount: 20);
+        background-color: darken($color: map-get($map: $colors, $key: color-primary), $amount: 10);
         border-radius: 1rem;
         height: 3rem;
         border: 0;

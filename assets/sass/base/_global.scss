@@ -2,5 +2,20 @@ body{
     margin: 0;
     padding: map-get($map: $padding, $key: body);
     font-family: $font_familly_global;
+    background-color: map-get($map: $colors, $key: color-white);
+    -webkit-print-color-adjust:exact;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead{
     background-color: map-get($map: $colors, $key: color-primary);
+}
+
+td{
+    border: 1px solid map-get($map: $colors, $key: color-black);
+    padding: .5rem;
 }

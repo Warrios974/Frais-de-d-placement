@@ -29,3 +29,54 @@
         }
     }
 }
+
+.document{
+    position: relative;
+    padding: 0 2rem;
+    font-size: map-get($map: $font_sizeDocument, $key: paragraphes);
+    > h1{
+        font-size: map-get($map: $font_sizeDocument, $key: bigHeaders);
+        text-align: left;
+        @include paddingTopBotDocument;
+    }
+    > img{
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+        width: 10rem;
+    }
+    &__header,
+    &__table{
+        @include flex(row,nowrap,center);
+        justify-content: space-between;
+    }
+    &__header,
+    &__table,
+    &__header{
+        @include paddingTopBotDocument;
+    }
+    &__header{
+        &__globalInfo{
+            width: 50%;
+        }
+        &__CV{
+            width: 50%;
+        }
+    }
+    &__table{
+    }
+    &__footer{
+        @include flex(column,nowrap,left);
+        justify-content: left;
+        &__bilan{
+            @include paddingTopBotDocument;
+        }
+        &__signature{
+            width: 25%;
+            height: 5rem;
+            text-align: center;
+            border: 1px solid map-get($map: $colors, $key: color-black);
+        }
+    }
+}
+

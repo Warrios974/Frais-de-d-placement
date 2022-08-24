@@ -19,11 +19,19 @@ $colors :(
 
 
 $font_size :(
+    bigHeaders : 3.4rem,
     logo: 2em,
     icons: 1.5em,
     headers: 1.4em,
     paragraphes: 1.1em,
     legends: 0.8em,
+);
+
+$font_sizeDocument :(
+    bigHeaders : 35pt,
+    headers: 20pt,
+    paragraphes: 8pt,
+    legends: 6pt,
 );
 
 $padding:(
