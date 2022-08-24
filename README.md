@@ -7,6 +7,6 @@ Fonctionnement final :
 - Imprimer
 
 Avancé : 
-Creation du formualaire
-Récuperation des données du formulaire
-Calculs finaux
+- Creation du formualaire
+- Récuperation des données du formulaire
+- Calculs finaux
