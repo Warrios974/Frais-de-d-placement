@@ -19,3 +19,10 @@
 @mixin paddingTopBotDocument {
     padding: 1rem 0;
 }
+
+@mixin noPrint {
+    @media print
+    {    
+        display: none !important;
+    }
+}
