@@ -1,0 +1,8 @@
+.btn{
+    cursor: pointer;
+    border: 2px solid lighten($color: map-get($map: $colors, $key: color-primary), $amount: 30);
+    background-color: map-get($map: $colors, $key: color-white);
+    color: map-get($map: $colors, $key: color-black);
+    border-radius: 1rem;
+    padding: 1rem;
+}
