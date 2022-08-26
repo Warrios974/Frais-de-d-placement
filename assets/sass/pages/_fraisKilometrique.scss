@@ -1,36 +1,5 @@
-#validationformulaire{
-    display: none
-}
-
-.validationformulaire{
-    z-index: 3;
-    @include flex(row,nowrap,center);
-    justify-content: center;
-    background-color: rgba($color: map-get($map: $colors, $key: color-black), $alpha: 0.5);
-    position: fixed;
-    top : 0;
-    left : 0;
-    bottom : 0;
-    right : 0;
-    width: 100%;
-    height: 100%;
-    &__main{
-        @include flex(column,nowrap,center);
-        justify-content: center;
-        background-color: map-get($map: $colors, $key: color-white);
-        width: 45%;
-        height: 25%;
-        padding: 3rem;
-        &__title{
-    
-        }
-        &__body{
-    
-        }
-    }
-}
-
 .document{
+    display: none;
     position: relative;
     padding: 0 2rem;
     font-size: map-get($map: $font_sizeDocument, $key: paragraphes);
@@ -38,6 +7,7 @@
         font-size: map-get($map: $font_sizeDocument, $key: bigHeaders);
         text-align: left;
         @include paddingTopBotDocument;
+        margin: .5rem 0;
     }
     > img{
         position: absolute;
@@ -57,10 +27,10 @@
     }
     &__header{
         &__globalInfo{
-            width: 50%;
+            width: 60%;
         }
         &__CV{
-            width: 50%;
+            width: 40%;
         }
     }
     &__table{
@@ -77,6 +47,19 @@
             text-align: center;
             border: 1px solid map-get($map: $colors, $key: color-black);
         }
+    }
+    &__btnPrint{
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        @include noPrint;
+    }
+    &__btnReturn{
+        display: none;
+        position: fixed;
+        bottom: 2rem;
+        left: 2rem;
+        @include noPrint;
     }
 }
 
