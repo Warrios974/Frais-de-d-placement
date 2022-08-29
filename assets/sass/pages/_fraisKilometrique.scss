@@ -4,6 +4,7 @@
     padding: 0 2rem;
     font-size: map-get($map: $font_sizeDocument, $key: paragraphes);
     > h1{
+        color: map-get($map: $colors, $key: color-black);
         font-size: map-get($map: $font_sizeDocument, $key: bigHeaders);
         text-align: left;
         @include paddingTopBotDocument;
@@ -49,12 +50,15 @@
         }
     }
     &__btnPrint{
+        font-family: $font_familly_global;
+        background-color: lighten($color: map-get($map: $colors, $key: color-black), $amount: 95);
         position: fixed;
         bottom: 2rem;
         right: 2rem;
         @include noPrint;
     }
     &__btnReturn{
+        font-family: $font_familly_global;
         display: none;
         position: fixed;
         bottom: 2rem;

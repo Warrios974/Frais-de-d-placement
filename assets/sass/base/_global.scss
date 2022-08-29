@@ -4,7 +4,7 @@ body{
     margin: 0;
     padding: map-get($map: $padding, $key: body);
     font-family: $font_familly_global;
-    background-color: map-get($map: $colors, $key: color-white);
+    background-color: lighten($color: map-get($map: $colors, $key: color-secondary), $amount: 25);
     -webkit-print-color-adjust:exact;
 }
 
@@ -20,4 +20,8 @@ thead{
 td{
     border: 1px solid map-get($map: $colors, $key: color-black);
     padding: .4rem;
+}
+
+h1{
+    color: map-get($map: $colors, $key: color-secondary);
 }

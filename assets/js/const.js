@@ -1,3 +1,4 @@
+const body = document.querySelector('body');
 const sectionFormFraisKilometrique = document.getElementById("sectionFormFraisKilometrique");
 const formFraisKilometrique = document.getElementById("formFraisKilometrique");
 const validateForm = document.getElementById("validationformulaire");

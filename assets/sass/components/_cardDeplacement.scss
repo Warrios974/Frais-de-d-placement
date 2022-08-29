@@ -1,36 +1,37 @@
 .cardDplacement{
     position: relative;
     @include flex(row,wrap,left);
-    background-color: lighten($color: map-get($map: $colors, $key: color-white), $amount: 25);
+    //background-color: lighten($color: map-get($map: $colors, $key: color-secondary), $amount: 26);
     box-sizing: border-box;
     border-radius: 1rem;
-    padding: 2%;
-    margin: 2%;
+    margin: 2% 0;
     > h2{
         width: 100%;
     }
+    > hr{
+        width: 100%;
+        border: 1px solid map-get($map: $colors, $key: color-secondary);
+    }
     &__champ{
-        > input{
-            border: 2px solid lighten($color: map-get($map: $colors, $key: color-primary), $amount: 30);
-        }
         &:last-of-type{
             flex-direction: row-reverse;
-            align-items: flex-end;
+            align-items: center;
             > label{
                 box-sizing: border-box;
                 width: 70%;
             }
             > input{
+                box-shadow: none;
                 box-sizing: border-box;
                 width: 25%;
-                height: 2.5rem;
+                height: 1.5rem;
             }
         }
     }
     &__btnCloseCard{
         cursor: pointer;
         position: absolute;
-        top: 1rem;
+        top: 3rem;
         right: 1rem;
     }
 }

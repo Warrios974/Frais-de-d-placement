@@ -21,7 +21,9 @@
     }
     select,
     input{
-        background-color: lighten($color: map-get($map: $colors, $key: color-primary), $amount: 30);
+        font-family: $font_familly_global;
+        background-color: lighten($color: map-get($map: $colors, $key: color-black), $amount: 95);
+        box-shadow: inset 0 0 3px lighten($color: map-get($map: $colors, $key: color-black), $amount: 50);
         border-radius: .5rem;
         height: 2.5rem;
         border: 0;

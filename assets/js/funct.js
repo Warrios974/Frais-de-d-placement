@@ -17,6 +17,7 @@ function ajoutDeplacement(){
     divDeplacement
         .appendChild(newDiv)
         .innerHTML = `  <h2> Déplacement n°${numero+1}</h2>
+                        <hr>
                         <div class="form__champs cardDplacement__champ">
                             <label for="dateDeplacement${numero+1}">Date</label>
                             <input type="date" name="dateDeplacement${numero+1}" id="dateDeplacement${numero+1}">
@@ -41,7 +42,7 @@ function ajoutDeplacement(){
                             <label for="deplacementDepuisDomicile${numero+1}">Déplacement depuis votre domicile</label>
                             <input type="checkbox" name="deplacementDepuisDomicile${numero+1}" id="deplacementDepuisDomicile${numero+1}">
                         </div>
-                        <a class="deplacementClose cardDplacement__btnCloseCard" onclick="delete_deplacement(this)">X</a>`
+                        <a class="deplacementClose cardDplacement__btnCloseCard" onclick="delete_deplacement(this)"><i class="fa-solid fa-xmark"></i></a>`
 }
 
 

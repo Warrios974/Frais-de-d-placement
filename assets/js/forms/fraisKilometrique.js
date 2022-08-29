@@ -72,6 +72,7 @@ formFraisKilometrique.addEventListener("submit", function(e) {
         addBilan(totalDistanceParcouru,totaldistancesDomicileLieuTravail,totalDistanceParcouruIndenisee,totalIndenisee);
         
         sectionDocument.style.display = "block";
+        body.style.backgroundColor = "white";
 
         return true;
     }
