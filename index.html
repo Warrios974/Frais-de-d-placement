@@ -10,46 +10,46 @@
     <body>
         <main>
             <header>
-                
             </header>
             <main>
                 <section id="sectionFormFraisKilometrique">
-                    <h1>Frais kilometrique</h1>
+                    <h1>Note de Frais</h1>
                     <form action="index.html" method="post" class="form formFraisKilometrique"  id="formFraisKilometrique">
                         <div class="formFraisKilometrique__GlobalInfo">
+                            <h1>Informations</h1>
                             <div class="form__champs">
                                 <label for="dateDujour">Date du jour</label>
-                                <input type="datetime-local" name="datedujour" id="dateDuJour" required>
+                                <input type="date" name="datedujour" id="dateDuJour">
                             </div>
     
                             <div class="form__champs">
                                 <label for="nom">Nom</label>
-                                <input type="text" name="nom" id="nom" required>
+                                <input type="text" name="nom" id="nom">
                             </div>
     
                             <div class="form__champs">
                                 <label for="prenom">Prenom</label>
-                                <input type="text" name="prenom" id="prenom" required>
+                                <input type="text" name="prenom" id="prenom">
                             </div>
     
                             <div class="form__champs">
                                 <label for="adresseDemandeur">Votre adresse</label>
-                                <input type="text" name="adresseDemandeur" id="adresseDemandeur" required>  
+                                <input type="text" name="adresseDemandeur" id="adresseDemandeur">  
                             </div>
     
                             <div class="form__champs">
                                 <label for="codePostale">Code postale</label>
-                                <input type="number" name="codePostale" id="codePostale" required>  
+                                <input type="number" name="codePostale" id="codePostale">  
                             </div>
     
                             <div class="form__champs">
-                                <label for="distanceDomicileLieuTravail">Distance entre votre domicile et lieu de travail aller/retour (km)</label>
-                                <input type="number" step="0.01" name="distanceDomicileLieuTravail" id="distanceDomicileLieuTravail" required>  
+                                <label for="distanceDomicileLieuTravail">Distance entre votre domicile et lieu de travail</label>
+                                <input type="number" step="0.01" name="distanceDomicileLieuTravail" id="distanceDomicileLieuTravail">  
                             </div>
     
                             <div class="form__champs">
                                 <label for="nombreChevaux">Nombre de chevaux de votre véhicule</label>
-                                <select id="nombreChevaux" name="nombreChevaux" required>
+                                <select id="nombreChevaux" name="nombreChevaux">
                                     <option value="0.502" selected>3 CV et moins</option>
                                     <option value="0.575">4 CV</option>
                                     <option value="0.603">5 CV</option>
@@ -60,28 +60,99 @@
     
                             <div class="form__champs">
                                 <label for="nombreDeplacement">Nombre de déplacement</label>
-                                <input type="number" name="nombreDeplacement" id="nombreDeplacement" required>
+                                <input type="number" name="nombreDeplacement" id="nombreDeplacement" value="0" disabled>
                             </div>
                         </div>
-                        <a id="ajoutDeplacement" class="form__btn formFraisKilometrique__btnAddDeplacement">+ Ajouter un déplacement</a>
+                        <a id="ajoutDeplacement" class="btn formFraisKilometrique__btnAddDeplacement">+ Ajouter un déplacement</a>
                         <div id="deplacement" class="formFraisKilometrique__deplacements">
+                            <div>
+                                <h1>Vos déplacements</h1>
+                            </div>
+                            <div>
+                                
+                            </div>
                         </div>
-                        <button type="submit" id="" class="form__btn formFraisKilometrique__btnSubmit">Valider</button>
+                        <button type="submit" id="" class="btn formFraisKilometrique__btnSubmit">Valider</button>
                     </form>
                 </section>
-                <section id="validationformulaire">
-                    <div class="validationformulaire__main">
-                        <div class="validationformulaire__main_title">
-                            <h2>Valider</h2>
-                        </div>
-                        <div class="validationformulaire__main_body">
+                <section id="document" class="document">
+                    <h1>Note de frais</h1>
+                    <img src="./assets/image/logo.png" alt="LogoWebcup">
+                    <div class="document__header">
+                        <div class="document__header__globalInfo">
                             
                         </div>
+                        <div class="document__header__CV">
+                            <div>
+                                <h2>Barême de remboursement 2022</h2>
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>Nombre de CV</td>
+                                        <td>Moins 5000 Km</td>
+                                        <td>Choix du nombre de chevaux fiscaux</td>
+                                    </tr>
+                                </thead>
+                                <tbody> <!-- Body du tableau -->
+                                    <tr>
+                                        <td>3 CV</td>
+                                        <td>0,502</td>
+                                        <td class="CVCheckbox"><input type="checkbox" name="CV3" id="checkbox05"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4 CV</td>
+                                        <td>0,575</td>
+                                        <td class="CVCheckbox"><input type="checkbox" name="CV4" id="checkbox05"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5 CV</td>
+                                        <td>0,603</td>
+                                        <td class="CVCheckbox"><input type="checkbox" name="CV5" id="checkbox05"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>6 CV</td>
+                                        <td>0,631</td>
+                                        <td class="CVCheckbox"><input type="checkbox" name="CV6" id="checkbox05"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>7 CV et plus </td>
+                                        <td>0,661</td>
+                                        <td class="CVCheckbox"><input type="checkbox" name="CV7" id="checkbox05"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
+                    <div class="document__table">
+                        <table>
+                            <thead> <!-- En-tête du tableau -->
+                                <tr>
+                                    <td>Date</td>
+                                    <td>Objet du déplacement</td>
+                                    <td>Adresse de départ</td>
+                                    <td>Adresse d'arrivée</td>
+                                    <td>Distance parcourue (km)</td>
+                                </tr>
+                            </thead>
+                            <tbody> <!-- Body du tableau -->
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="document__footer">
+                        <div class="document__footer__bilan">
+                            
+                        </div>
+                        <div class="document__footer__signature">
+                            <p>Signature du demandeur</p>
+                        </div>
+                    </div>
+                    <button class="document__btnPrint btn" onclick="addPrint(this)">Imprimer</button>
+                    <button class="document__btnReturn btn" onclick="retour()">Retour</button>
                 </section>
             </main>
-            <footer>
-                <span>Webcup ! Frais de déplacement</span>
+            <footer class="footer">
             </footer>
         </main>
     </body>

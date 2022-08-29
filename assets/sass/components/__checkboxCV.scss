@@ -1,0 +1,6 @@
+.CVCheckbox{
+    input{
+        pointer-events:none;
+        background-color: map-get($map: $colors, $key: color-white);
+    }
+}

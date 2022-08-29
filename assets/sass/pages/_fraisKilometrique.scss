@@ -1,31 +1,65 @@
-#validationformulaire{
-    display: none
-}
-
-.validationformulaire{
-    z-index: 3;
-    @include flex(row,nowrap,center);
-    justify-content: center;
-    background-color: rgba($color: map-get($map: $colors, $key: color-black), $alpha: 0.5);
-    position: fixed;
-    top : 0;
-    left : 0;
-    bottom : 0;
-    right : 0;
-    width: 100%;
-    height: 100%;
-    &__main{
-        @include flex(column,nowrap,center);
-        justify-content: center;
-        background-color: map-get($map: $colors, $key: color-white);
-        width: 45%;
-        height: 25%;
-        padding: 3rem;
-        &__title{
-    
+.document{
+    display: none;
+    position: relative;
+    padding: 0 2rem;
+    font-size: map-get($map: $font_sizeDocument, $key: paragraphes);
+    > h1{
+        font-size: map-get($map: $font_sizeDocument, $key: bigHeaders);
+        text-align: left;
+        @include paddingTopBotDocument;
+        margin: .5rem 0;
+    }
+    > img{
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+        width: 10rem;
+    }
+    &__header,
+    &__table{
+        @include flex(row,nowrap,center);
+        justify-content: space-between;
+    }
+    &__header,
+    &__table,
+    &__header{
+        @include paddingTopBotDocument;
+    }
+    &__header{
+        &__globalInfo{
+            width: 60%;
         }
-        &__body{
-    
+        &__CV{
+            width: 40%;
         }
     }
+    &__table{
+    }
+    &__footer{
+        @include flex(column,nowrap,left);
+        justify-content: left;
+        &__bilan{
+            @include paddingTopBotDocument;
+        }
+        &__signature{
+            width: 25%;
+            height: 5rem;
+            text-align: center;
+            border: 1px solid map-get($map: $colors, $key: color-black);
+        }
+    }
+    &__btnPrint{
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        @include noPrint;
+    }
+    &__btnReturn{
+        display: none;
+        position: fixed;
+        bottom: 2rem;
+        left: 2rem;
+        @include noPrint;
+    }
 }
+
