@@ -9,11 +9,14 @@ Fonctionnement final :
 Avancé : 
 - Creation du formualaire
 - Récuperation des données du formulaire
-- Affichage du document en entier
+- Affichage du document en entier en HTML
+- Bouton imprimer opérationnel
 
 Etat actuel :
 - Affiche le document avec tout les informations
+- Possibilité d'imprimer
 
 A faire :
-- Fonction imprimer
 - Validation des champs
+- Detection des adresse automatique
+- Calcule automatique de la distance parcouru grace aux adresses
