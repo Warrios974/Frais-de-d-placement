@@ -27,11 +27,11 @@ function ajoutDeplacement(){
                         </div>
                         <div class="form__champs cardDplacement__champ">
                             <label for="adresseDepartDeplacement1">Adresse de départ</label>
-                            <input type="text" name="adresseDepartDeplacement${numero+1}" id="adresseDepartDeplacement${numero+1}"> 
+                            <input type="text" name="adresseDepartDeplacement${numero+1}" id="adresseDepartDeplacement${numero+1}" class="inputGoogle"> 
                         </div>
                         <div class="form__champs cardDplacement__champ">
                             <label for="adresseArriverDeplacement${numero+1}">Adresse d'arriver</label>
-                            <input type="text" name="adresseArriverDeplacement${numero+1}" id="adresseArriverDeplacement${numero+1}"> 
+                            <input type="text" name="adresseArriverDeplacement${numero+1}" id="adresseArriverDeplacement${numero+1}" class="inputGoogle"> 
                         </div>
                         <div class="form__champs cardDplacement__champ">
                             <label for="distanceDeplacement${numero+1}">Distance parcouru (km)</label>
@@ -41,7 +41,10 @@ function ajoutDeplacement(){
                             <label for="deplacementDepuisDomicile${numero+1}">Déplacement depuis votre domicile</label>
                             <input type="checkbox" name="deplacementDepuisDomicile${numero+1}" id="deplacementDepuisDomicile${numero+1}">
                         </div>
-                        <a class="deplacementClose cardDplacement__btnCloseCard" onclick="delete_deplacement(this)">X</a>`
+                        <a class="deplacementClose cardDplacement__btnCloseCard" onclick="delete_deplacement(this)">X</a>`;
+    
+    
+    initAutocomplete();
 }
 
 
@@ -148,4 +151,36 @@ function selectCV(nombreChevaux){
 function retour() {
     sectionFormFraisKilometrique.style.display = "block";
     sectionDocument.style.display = "none";
+}
+
+function initAutocomplete() {
+    inputsGoogle = document.querySelectorAll(".inputGoogle");
+    for(let i = 0; i < inputsGoogle.length; i++){
+        new google.maps.places.Autocomplete(inputsGoogle[i], options)
+    }
+}
+
+function deplacementKilometer(adresseDepartDeplacement,adresseArriverDeplacement) {
+    let adresseDepartDeplacementURI = encodeURIComponent(adresseDepartDeplacement);
+    let adresseArriverDeplacementURI = encodeURIComponent(adresseArriverDeplacement);
+    console.log(adresseDepartDeplacement);
+    console.log(adresseArriverDeplacement);
+    let URL = `https://maps.googleapis.com/maps/api/distancematrix/json?destinations=${adresseArriverDeplacementURI}&origins=${adresseDepartDeplacementURI}&units=kilometer&key=${api_key}`;
+    console.log(URL);
+    let headers = new Headers();
+    headers.append('Access-Control-Allow-Origin', 'http://127.0.0.1:5500');
+    headers.append('Access-Control-Allow-Headers', 'Content-Type');
+    headers.append('Access-Control-Allow-Credentials', 'true');
+    headers.append('Access-Control-Allow-Methods', 'GET,PATCH,POST,PUT,DELETE');
+    // les ateliers
+    fetch(URL,{
+        method: 'GET',
+        mode: 'cors',
+        headers: headers,
+    })
+    .then(function(e) {
+        console.log(e);
+    }).catch(function(err){
+        console.log(err);
+    });
 }
