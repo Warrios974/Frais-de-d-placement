@@ -60,6 +60,8 @@ formFraisKilometrique.addEventListener("submit", function(e) {
             distancesDomicileLieuTravail.push(Number(deplacement.distanceDomicileTravailCheck(distanceDomicileLieuTravail)));
 
             addDeplacement(initDate(dateDeplacement[0].value),objetDeplacement[0].value,adresseDepartDeplacement[0].value,adresseArriverDeplacement[0].value,distanceDeplacement[0].value);
+
+            deplacementKilometer(adresseDepartDeplacement[0].value,adresseArriverDeplacement[0].value);
         }
         
         //Somme des tableau avec la fonction "additionTableau"
