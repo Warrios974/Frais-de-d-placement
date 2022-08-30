@@ -18,25 +18,25 @@ function ajoutDeplacement(){
         .appendChild(newDiv)
         .innerHTML = `  <h2> Déplacement n°${numero+1}</h2>
                         <hr>
-                        <div class="form__champs cardDplacement__champ">
+                        <div class="form__champs cardDplacement__champ" data-error="la date doit être compris entre ...">
                             <label for="dateDeplacement${numero+1}">Date</label>
-                            <input type="date" name="dateDeplacement${numero+1}" id="dateDeplacement${numero+1}">
+                            <input type="date" name="dateDeplacement${numero+1}" id="dateDeplacement${numero+1}" required>
                         </div>
-                        <div class="form__champs cardDplacement__champ">
+                        <div class="form__champs cardDplacement__champ" data-error="Votre l'objet doit contenir au minimum 2 caractéres">
                             <label for="objetDeplacement${numero+1}">Objet du déplacement</label>
-                            <input type="text" name="objetDeplacement${numero+1}" id="objetDeplacement${numero+1}"> 
+                            <input type="text" name="objetDeplacement${numero+1}" id="objetDeplacement${numero+1}" minlength="2" required> 
                         </div>
-                        <div class="form__champs cardDplacement__champ">
+                        <div class="form__champs cardDplacement__champ" data-error="Votre prénom doit contenir au minimum 2 caractéres">
                             <label for="adresseDepartDeplacement1">Adresse de départ</label>
-                            <input type="text" name="adresseDepartDeplacement${numero+1}" id="adresseDepartDeplacement${numero+1}"> 
+                            <input type="text" name="adresseDepartDeplacement${numero+1}" id="adresseDepartDeplacement${numero+1}" minlength="2" required> 
                         </div>
-                        <div class="form__champs cardDplacement__champ">
+                        <div class="form__champs cardDplacement__champ" data-error="Votre prénom doit contenir au minimum 2 caractéres">
                             <label for="adresseArriverDeplacement${numero+1}">Adresse d'arriver</label>
-                            <input type="text" name="adresseArriverDeplacement${numero+1}" id="adresseArriverDeplacement${numero+1}"> 
+                            <input type="text" name="adresseArriverDeplacement${numero+1}" id="adresseArriverDeplacement${numero+1}" minlength="2" required> 
                         </div>
-                        <div class="form__champs cardDplacement__champ">
+                        <div class="form__champs cardDplacement__champ" data-error="Distance invalide, deux chiffres après la virgule et la virgule doit etre un point">
                             <label for="distanceDeplacement${numero+1}">Distance parcouru (km)</label>
-                            <input type="number" step="0.01" name="distanceDeplacement${numero+1}" id="distanceDeplacement${numero+1}">
+                            <input type="number" step="0.01" name="distanceDeplacement${numero+1}" id="distanceDeplacement${numero+1}" required>
                         </div>
                         <div class="form__champs cardDplacement__champ">
                             <label for="deplacementDepuisDomicile${numero+1}">Déplacement depuis votre domicile</label>
@@ -149,4 +149,31 @@ function selectCV(nombreChevaux){
 function retour() {
     sectionFormFraisKilometrique.style.display = "block";
     sectionDocument.style.display = "none";
+}
+
+function closeModal(e) {
+    e.parentNode.style.display = "none";
+}
+
+// Validation des champs
+function initFormChamps(){
+    formChampsInput = document.querySelectorAll(".form__champs > input");
+
+    formChampsInput.forEach(input => {
+        input.addEventListener('input', (e) => {
+            input.validity.valid ? 
+                input.parentNode.removeAttribute("data-error-visible") :
+                input.parentNode.setAttribute("data-error-visible", "true");
+        })
+    })
+}
+
+//Alert Message
+// Pas de déplacement
+function deplacementMiss() {
+    sectionAlert
+    .innerHTML = `  <i class="fa-solid fa-triangle-exclamation alert__icon"></i>
+                    <h2>Avertissement</h2>
+                    <span>Vous ne pouvez pas valider le formulaire si vous n'ajoutez pas de déplacement</span>
+                    `;
 }

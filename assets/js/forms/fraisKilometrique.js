@@ -6,7 +6,10 @@ btnAjoutDeplacement.addEventListener("click", function(e) {
     ajoutDeplacement();
     initBtnCloseDeplacement();
     btnCloseDeplacementDisplayNone();
+    initFormChamps();
 });
+
+initFormChamps();
 
 
 
@@ -75,6 +78,9 @@ formFraisKilometrique.addEventListener("submit", function(e) {
         body.style.backgroundColor = "white";
 
         return true;
+    }else{
+        sectionAlert.parentNode.style.display = "flex";
+        deplacementMiss();
+        return false;
     }
-    return false;
 })

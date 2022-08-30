@@ -20,39 +20,39 @@
                     <form action="index.html" method="post" class="form formFraisKilometrique"  id="formFraisKilometrique">
                         <div class="formFraisKilometrique__GlobalInfo">
                             <h1>Informations</h1>
-                            <div class="form__champs">
+                            <div class="form__champs" data-error="Veillez entrer un date valide s'il vous plait">
                                 <label for="dateDujour">Date du jour</label>
-                                <input type="date" name="datedujour" id="dateDuJour">
+                                <input type="date" name="datedujour" id="dateDuJour" required>
                             </div>
     
-                            <div class="form__champs">
+                            <div class="form__champs" data-error="Votre nom doit contenir au minimum 2 caractéres">
                                 <label for="nom">Nom</label>
-                                <input type="text" name="nom" id="nom">
+                                <input type="text" name="nom" id="nom" minlength="2" required>
                             </div>
     
-                            <div class="form__champs">
+                            <div class="form__champs" data-error="Votre prénom doit contenir au minimum 2 caractéres">
                                 <label for="prenom">Prenom</label>
-                                <input type="text" name="prenom" id="prenom">
+                                <input type="text" name="prenom" id="prenom" minlength="2" required>
                             </div>
     
-                            <div class="form__champs">
+                            <div class="form__champs" data-error="L'adresse est obligatoire">
                                 <label for="adresseDemandeur">Votre adresse</label>
-                                <input type="text" name="adresseDemandeur" id="adresseDemandeur">  
+                                <input type="text" name="adresseDemandeur" id="adresseDemandeur" required>  
                             </div>
     
-                            <div class="form__champs">
+                            <div class="form__champs" data-error="Le code postale doit contenir 2 à 5 caractéres">
                                 <label for="codePostale">Code postale</label>
-                                <input type="number" name="codePostale" id="codePostale">  
+                                <input type="text" name="codePostale" id="codePostale"15 pattern="^974[0-9]{2}" required>  
                             </div>
     
-                            <div class="form__champs">
+                            <div class="form__champs" data-error="Distance invalide, deux chiffres après la virgule et la virgule doit etre un point">
                                 <label for="distanceDomicileLieuTravail">Distance entre votre domicile et lieu de travail</label>
-                                <input type="number" step="0.01" name="distanceDomicileLieuTravail" id="distanceDomicileLieuTravail">  
+                                <input type="number" step="0.01" name="distanceDomicileLieuTravail" id="distanceDomicileLieuTravail" pattern="/^\d{0,6}\.?\d{1,2}$/" required>  
                             </div>
     
                             <div class="form__champs">
                                 <label for="nombreChevaux">Nombre de chevaux de votre véhicule</label>
-                                <select id="nombreChevaux" name="nombreChevaux">
+                                <select id="nombreChevaux" name="nombreChevaux" required>
                                     <option value="0.502" selected>3 CV et moins</option>
                                     <option value="0.575">4 CV</option>
                                     <option value="0.603">5 CV</option>
@@ -63,7 +63,7 @@
     
                             <div class="form__champs">
                                 <label for="nombreDeplacement">Nombre de déplacement</label>
-                                <input type="number" name="nombreDeplacement" id="nombreDeplacement" value="0" disabled>
+                                <input type="number" name="nombreDeplacement" id="nombreDeplacement" value="0" disabled required>
                             </div>
                         </div>
                         <a id="ajoutDeplacement" class="btn formFraisKilometrique__btnAddDeplacement">+ Ajouter un déplacement</a>
@@ -153,6 +153,12 @@
                     </div>
                     <button class="document__btnPrint btn" onclick="addPrint(this)">Imprimer</button>
                     <button class="document__btnReturn btn" onclick="retour()">Retour</button>
+                </section>
+                <section class="modal">
+                    <i class="fa-solid fa-xmark modal__btnClose" onclick="closeModal(this)"></i>
+                    <div id="alert" class="modal__main">
+
+                    </div>
                 </section>
             </main>
             <footer class="footer">
