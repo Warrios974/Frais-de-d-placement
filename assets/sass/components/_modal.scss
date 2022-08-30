@@ -1,0 +1,39 @@
+.modal{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: map-get($map: $colors, $key: color-black), $alpha: 0.3);
+    &__main{
+        position: relative;
+        text-align: center;
+        @include flex(column,nowrap,center);
+        justify-content: center;
+        background-color: map-get($map: $colors, $key: color-white);
+        width: 20%;
+        height: 15%;
+        border-radius: 1rem;
+        padding: 5rem;
+    }
+    &__btnClose{
+        cursor: pointer;
+        position: absolute;
+        font-size: 3rem;
+        color: map-get($map: $colors, $key: color-white);
+        top: 2rem;
+        right: 3rem;
+    }
+}
+
+.alert{
+    &__icon{
+        font-size: 4rem;
+        color: map-get($map: $colors, $key: color-secondary);
+    }
+}
